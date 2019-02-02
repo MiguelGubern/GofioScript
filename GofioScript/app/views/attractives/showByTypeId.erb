@@ -1,0 +1,14 @@
+<h3 class="mt-5 text-center">Choose a place</h3><hr>
+<div class="mt-2 container bg-light">
+
+  <ul>
+    <% @attractives.each do |each| %>
+      <li>
+        <a href="/attractives/<%= each.id %>"><%= each.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<a href="/types">Back</a>
+
