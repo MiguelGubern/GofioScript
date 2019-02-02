@@ -93,8 +93,8 @@
     }
 
     function addMarker(lat, lon, name, description) {
-        var htmlDescription = "<p>Name: " + name + "</p>"+
-            "<p>Desc: " + description + "</p>";
+        var htmlDescription = "<h4>" + name + "</h4><hr>"+
+            "<p>" + description + "</p>";
         var infoWindow = new google.maps.InfoWindow({
             content: htmlDescription
         });
@@ -105,7 +105,7 @@
             icon: 'http://maps.google.com/mapfiles/kml/shapes/snack_bar.png'
         });
         marker.addListener('click', function() {
-            infoWindow.open(mapa, marker);
+            infoWindow.open(map, marker);
         });
     }
 
