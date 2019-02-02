@@ -8,8 +8,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<style>
+  #bg-body{
+    background-color: darkslategrey;
+  }
 
-  <body>
+</style>
+  <body id="bg-body">
     <%= yield %>
   </body>
 </html>
