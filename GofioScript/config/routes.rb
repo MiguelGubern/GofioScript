@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   get '/maps/show/:id', to: "maps#show"
   get "/types/loadTypesFromCsv", to: "types#loadTypesFromCsv"
+  get "/coffe_shops/loadCoffeShopsFromCsv", to: "coffe_shops#loadCoffeShopsFromCsv"
   get "/attractives/loadAttractivesFromCsv", to: "attractives#loadAttractivesFromCsv"
 
   get "/attractives/showByTypeId/:id", to: "attractives#showByTypeId"
-
+  resources :coffe_shops
   resources :attractives
   resources :types
 
