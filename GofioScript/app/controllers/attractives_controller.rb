@@ -1,5 +1,14 @@
+require 'csv'
 class AttractivesController < ApplicationController
   before_action :set_attractive, only: [:show, :edit, :update, :destroy]
+
+  def loadAttractivesFromCsv
+        csvFile = File.read("atractivos.csv")
+        CSV.parse(csvFile, { headers: true, col_sep: "#" }).each do | row |
+          currentType = Type.getTypeIdFromType row["TIPO"]
+          Attractive.create(name: row["NOMBRE"], description: row["DESCRIPCION"], address: row["DIRECCION"], web: row["WEB"], telephone: row["TELEFONO"], latitude: row["LATITUD"], longitude: row["LONGITUD"], type_id: currentType.id, schedule: row["HORARIO"])
+        end
+  end
 
   # GET /attractives
   # GET /attractives.json
@@ -10,6 +19,10 @@ class AttractivesController < ApplicationController
   # GET /attractives/1
   # GET /attractives/1.json
   def show
+  end
+
+  def showByTypeId
+    @attractives = Attractive.where(:type_id => params[:id])
   end
 
   # GET /attractives/new

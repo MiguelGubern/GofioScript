@@ -1,6 +1,14 @@
 class TypesController < ApplicationController
   before_action :set_type, only: [:show, :edit, :update, :destroy]
 
+  def loadTypesFromCsv
+    file = File.open("type.list").read
+    file.gsub!(/\r\n?/, "\n")
+    file.each_line do | type |
+        Type.insertTypeIfNotExist type.gsub!(/\n?/, "")
+    end
+  end
+
   # GET /types
   # GET /types.json
   def index
@@ -10,6 +18,7 @@ class TypesController < ApplicationController
   # GET /types/1
   # GET /types/1.json
   def show
+
   end
 
   # GET /types/new

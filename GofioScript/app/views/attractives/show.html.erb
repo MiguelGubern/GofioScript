@@ -1,49 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="ml-2 mr-2">
+  <p>
+    <strong>Name:</strong>
+  <p class="text-light"><%= @attractive.name %></p>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @attractive.name %>
-</p>
+  <p>
+    <strong>Description:</strong>
+  <p class="text-light"><%= @attractive.description %></p>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @attractive.description %>
-</p>
+  <p>
+    <strong>Address:</strong>
+  <p class="text-light"><%= @attractive.address %></p>
+  </p>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @attractive.address %>
-</p>
-
-<p>
-  <strong>Web:</strong>
-  <%= @attractive.web %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @attractive.telephone %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @attractive.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @attractive.longitude %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @attractive.type %>
-</p>
-
-<p>
-  <strong>Schedule:</strong>
-  <%= @attractive.schedule %>
-</p>
-
-<%= link_to 'Edit', edit_attractive_path(@attractive) %> |
-<%= link_to 'Back', attractives_path %>
+<a href="/types">Back</a>
+<a href="/maps/show/<%= @attractive.id %>">Add</a>

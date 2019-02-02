@@ -1,0 +1,12 @@
+class CreateCoffeShops < ActiveRecord::Migration[5.2]
+  def change
+    create_table :coffe_shops do |t|
+      t.string :name
+      t.string :description
+      t.string :latitude
+      t.string :longitude
+
+      t.timestamps
+    end
+  end
+end
