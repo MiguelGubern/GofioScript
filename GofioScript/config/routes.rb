@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :coffe_shops
   get "/types/loadTypesFromCsv", to: "types#loadTypesFromCsv"
   get "/attractives/loadAttractivesFromCsv", to: "attractives#loadAttractivesFromCsv"
 
