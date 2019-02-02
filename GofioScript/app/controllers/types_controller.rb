@@ -18,6 +18,7 @@ class TypesController < ApplicationController
   # GET /types/1
   # GET /types/1.json
   def show
+
   end
 
   # GET /types/new

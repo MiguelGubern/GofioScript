@@ -21,6 +21,10 @@ class AttractivesController < ApplicationController
   def show
   end
 
+  def showByTypeId
+    @attractives = Attractive.where(:type_id => params[:id])
+  end
+
   # GET /attractives/new
   def new
     @attractive = Attractive.new
