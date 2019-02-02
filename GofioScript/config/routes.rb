@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'maps/show'
   get "/types/loadTypesFromCsv", to: "types#loadTypesFromCsv"
   get "/attractives/loadAttractivesFromCsv", to: "attractives#loadAttractivesFromCsv"
   resources :attractives
