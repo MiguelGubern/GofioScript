@@ -1,27 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Types</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @types.each do |type| %>
-      <tr>
-        <td><%= type.name %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Type', new_type_path %>
+<div class="container text-center mt-5">
+  <div>
+    <input  class="float-left" type="text" placeholder="Search.."><br>
+  </div>
+  <% @types.each do |type| %>
+    <a href="attractive/showByTypeId/<%= type.id %>">
+      <div class="card w-50 mt-5 float-right">
+          <div class="card-body">
+          <h5 class="card-title" style="color: #FF5E00;"><%= type.name %></h5>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
