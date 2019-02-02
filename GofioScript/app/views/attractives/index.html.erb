@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Attractives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Web</th>
+      <th>Telephone</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Type</th>
+      <th>Schedule</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attractives.each do |attractive| %>
+      <tr>
+        <td><%= attractive.name %></td>
+        <td><%= attractive.description %></td>
+        <td><%= attractive.address %></td>
+        <td><%= attractive.web %></td>
+        <td><%= attractive.telephone %></td>
+        <td><%= attractive.latitude %></td>
+        <td><%= attractive.longitude %></td>
+        <td><%= attractive.type %></td>
+        <td><%= attractive.schedule %></td>
+        <td><%= link_to 'Show', attractive %></td>
+        <td><%= link_to 'Edit', edit_attractive_path(attractive) %></td>
+        <td><%= link_to 'Destroy', attractive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attractive', new_attractive_path %>
