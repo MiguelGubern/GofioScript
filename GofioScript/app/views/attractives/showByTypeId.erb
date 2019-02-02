@@ -1,0 +1,7 @@
+<ul>
+  <% @attractives.each do |each| %>
+    <li>
+      <a href="/attractives/<%= each.id %>"><%= each.name %></a>
+    </li>
+  <% end %>
+</ul>
