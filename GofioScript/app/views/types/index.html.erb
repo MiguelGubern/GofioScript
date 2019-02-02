@@ -1,9 +1,8 @@
 <div class="container text-center mt-5">
-  <div>
-    <input  class="float-left" type="text" placeholder="Search.."><br>
-  </div>
+  <h3>Which attractive would you like to visit?</h3>
+  <hr>
   <% @types.each do |type| %>
-    <a href="attractive/showByTypeId/<%= type.id %>">
+    <a href="attractives/showByTypeId/<%= type.id %>">
       <div class="card w-50 mt-5 float-right">
           <div class="card-body">
           <h5 class="card-title" style="color: #FF5E00;"><%= type.name %></h5>
