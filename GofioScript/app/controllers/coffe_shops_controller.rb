@@ -1,6 +1,13 @@
 class CoffeShopsController < ApplicationController
   before_action :set_coffe_shop, only: [:show, :edit, :update, :destroy]
 
+  def loadCoffeShopsFromCsv
+    csvFile = File.read("coffeeShops.csv")
+    CSV.parse(csvFile, { headers: true, col_sep: "#" }).each do | row |
+      currentType = Type.getTypeIdFromType row["TIPO"]
+      Attractive.create(name: row["NOMBRE"], description: row["DESCRIPCION"], latitude: row["LATITUD"], longitude: row["LONGITUD"])
+    end
+  end
   # GET /coffe_shops
   # GET /coffe_shops.json
   def index
