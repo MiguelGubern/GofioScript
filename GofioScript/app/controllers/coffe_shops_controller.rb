@@ -1,3 +1,4 @@
+require 'csv'
 class CoffeShopsController < ApplicationController
   before_action :set_coffe_shop, only: [:show, :edit, :update, :destroy]
 
@@ -5,7 +6,7 @@ class CoffeShopsController < ApplicationController
     csvFile = File.read("coffeeShops.csv")
     CSV.parse(csvFile, { headers: true, col_sep: "#" }).each do | row |
       currentType = Type.getTypeIdFromType row["TIPO"]
-      Attractive.create(name: row["NOMBRE"], description: row["DESCRIPCION"], latitude: row["LATITUD"], longitude: row["LONGITUD"])
+      CoffeShop.create(name: row["NOMBRE"], description: row["DESCRIPCION"], latitude: row["LATITUD"], longitude: row["LONGITUD"])
     end
   end
   # GET /coffe_shops
